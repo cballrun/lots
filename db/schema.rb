@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_24_034327) do
+ActiveRecord::Schema.define(version: 2022_08_24_222642) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cards", force: :cascade do |t|
+    t.string "name"
+    t.integer "value"
+    t.boolean "holo"
+    t.text "rarity_symbol"
+    t.text "condition"
+    t.boolean "english"
+    t.boolean "first_edition"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "lot_id"
+    t.index ["lot_id"], name: "index_cards_on_lot_id"
+  end
 
   create_table "lots", force: :cascade do |t|
     t.string "name"
@@ -24,4 +38,5 @@ ActiveRecord::Schema.define(version: 2022_08_24_034327) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "cards", "lots"
 end
