@@ -9,4 +9,9 @@ RSpec.describe 'the lots index page' do
   it 'displays the names of all lots' do
     visit "/lots"
     
+    expect(page).to have_content(@lot.name)
   end
+
+
+
+end
