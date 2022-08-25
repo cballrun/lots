@@ -1,0 +1,14 @@
+
+<% @cards.each do |card| %>
+  <p><%= card.name %></p>
+  <p><%= card.id %></p>
+  <p><%= card.lot_id %></p>
+  <p><%= card.value %></p>
+  <p><%= card.holo %></p>
+  <p><%= card.rarity_symbol %></p>
+  <p><%= card.condition %></p>
+  <p><%= card.english %></p>
+  <p><%= card.first_edition %></p>
+  <p><%= card.created_at %></p>
+  <p><%= card.updated_at %></p>
+<% end %>

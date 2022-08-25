@@ -12,8 +12,18 @@ RSpec.describe 'Sets cards index' do
 
   it 'shows all of the names of the cards for the set' do
     visit "lots/#{@shadowless.id}/cards"
-    
+
+    expect(page).to have_content(@magikarp.id)
+    expect(page).to have_content(@magikarp.lot_id)
     expect(page).to have_content(@magikarp.name)
+    expect(page).to have_content(@magikarp.value)
+    expect(page).to have_content(@magikarp.holo)
+    expect(page).to have_content(@magikarp.rarity_symbol)
+    expect(page).to have_content(@magikarp.condition)
+    expect(page).to have_content(@magikarp.english)
+    expect(page).to have_content(@magikarp.first_edition)
+    expect(page).to have_content(@magikarp.created_at)
+    expect(page).to have_content(@magikarp.updated_at)
     expect(page).to have_content(@pidgey.name)
   end
 
