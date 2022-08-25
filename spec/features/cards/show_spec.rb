@@ -12,6 +12,7 @@ RSpec.describe 'the cards show page' do
     visit "cards/#{@card_1.id}"
     
     expect(page).to have_content(@card_1.id)
+    expect(page).to have_content(@card_1.lot_id)
     expect(page).to have_content(@card_1.name)
     expect(page).to have_content(@card_1.value)
     expect(page).to have_content(@card_1.holo)
