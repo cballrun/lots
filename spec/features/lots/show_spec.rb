@@ -26,17 +26,7 @@ RSpec.describe 'the lots show page' do
     expect(page).to_not have_content(@lot_2.name)
   end
 
-  xit 'displays all cards and shows their names' do
-    visit "/cards"
-  end
 
-  xit 'displays all cards and shows their names' do
-    visit "/cards"
-  end
-
-  xit 'displays all of a single cards attributes on its page' do
-    visit "cards/#{@card.id}"
-  end
 
   
 
