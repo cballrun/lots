@@ -13,11 +13,12 @@ RSpec.describe 'the lots index page' do
     visit "/lots"
     
     expect(page).to have_content(@jungle.name)
+    expect(page).to have_content(@shadowless.name)
   end
 
   xit 'displays lots with most recently created first' do
     visit '/lots'
-
+    #need test for recently created check
   end
 
   it 'shows when a lot was created' do
