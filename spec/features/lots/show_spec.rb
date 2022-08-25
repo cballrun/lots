@@ -3,7 +3,6 @@ require 'rails_helper'
 RSpec.describe 'the lots show page' do
   before :each do 
     @lot = Lot.create!(name: "Jungle", total_cards: 64, original_150: true, release_year: 1999)
-    #@card_1 = @lot.cards.create(name: "Magikarp", value: 3, holo: false, rarity_symbol: "Diamond", condition: "LP", english: true, first_edition: false)
     @lot_2 = Lot.create!(name: "Base Set", total_cards: 102, original_150: true, release_year: 1999)
   end
  
