@@ -7,12 +7,13 @@ RSpec.describe 'Sets cards index' do
     @magikarp = @shadowless.cards.create!(name: "Magikarp", value: 3, holo: false, rarity_symbol: "Diamond", condition: "LP", english: true, first_edition: false)
     @kangaskhan = @jungle.cards.create!(name: "Kangaskhan", value: 35, holo: true, rarity_symbol: "Star", condition: "LP", english: true, first_edition: true)
     @pidgey = @shadowless.cards.create!(name: "Pidgey", value: 3, holo: false, rarity_symbol: "Circle", condition: "NM", english: true, first_edition: false)
+    visit "lots/#{@shadowless.id}/cards"
   end
 
 
   it 'shows all of the names of the cards for the set' do
-    visit "lots/#{@shadowless.id}/cards"
-
+    
+    save_and_open_page
     expect(page).to have_content(@magikarp.id)
     expect(page).to have_content(@magikarp.lot_id)
     expect(page).to have_content(@magikarp.name)
@@ -27,8 +28,16 @@ RSpec.describe 'Sets cards index' do
     expect(page).to have_content(@pidgey.name)
   end
 
-  it 'links to each cards show page' do
+  it 'has a link to the card index page' do
+    click_on "All Cards"
 
+    expect(current_path).to eq("/cards")
+  end
+
+  it 'has a link to the lot index page' do
+    click_on "All Lots"
+
+    expect(current_path).to eq("/lots")
   end
 
 

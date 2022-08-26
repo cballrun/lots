@@ -34,6 +34,8 @@ RSpec.describe 'the lots index page' do
     expect(page).to have_content(@shadowless.created_at)
   end
 
+  
+
 
 
 
