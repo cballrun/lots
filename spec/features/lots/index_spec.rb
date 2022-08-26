@@ -18,14 +18,20 @@ RSpec.describe 'the lots index page' do
 
   xit 'displays lots with most recently created first' do
     visit '/lots'
-    #need test for recently created check
+    within('#lot-0') do
+      binding.pry
+      expect(page).to have_content(@jungle.name)
+      expect(page).to have_content(@jungle.created_at)
+      expect(page).to_not have_content(@base.created_at)
+    end
   end
 
   it 'shows when a lot was created' do
     visit '/lots'
-    save_and_open_page
+
     expect(page).to have_content(@jungle.created_at)
     expect(page).to have_content(@base.created_at)
+    expect(page).to have_content(@shadowless.created_at)
   end
 
 

@@ -1,6 +1,12 @@
 <h1>Lots</h1>
 
-<% @lots.each do |lot| %>
-  <h3><%= lot.name %></h3>
-  <p><%= lot.created_at %> </p>
+
+
+  <% @lots.most_recent.each_with_index do |lot, index| %>
+    <div id="lot-<%= index %>" >
+    <p> <%= lot.name %> </p>
+    <p><%= lot.created_at %> </p>
   <% end %>
+  <%# #@lots.most_recent.each_cwith_index do |lot, card|
+#make id = erb tag index %>
+<%# check out testing best practices in resources%>
