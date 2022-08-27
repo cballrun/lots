@@ -13,7 +13,7 @@ RSpec.describe 'Sets cards index' do
 
   it 'shows all of the names of the cards for the set' do
     
-    save_and_open_page
+    
     expect(page).to have_content(@magikarp.id)
     expect(page).to have_content(@magikarp.lot_id)
     expect(page).to have_content(@magikarp.name)
@@ -39,6 +39,8 @@ RSpec.describe 'Sets cards index' do
 
     expect(current_path).to eq("/lots")
   end
+
+
 
   
 

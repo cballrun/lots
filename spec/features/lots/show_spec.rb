@@ -7,11 +7,11 @@ RSpec.describe 'the lots show page' do
     @kangaskhan = @jungle.cards.create!(name: "Kangaskhan", value: 35, holo: true, rarity_symbol: "Star", condition: "LP", english: true, first_edition: true)
     @lickitung = @jungle.cards.create!(name: "Lickitung", value: 1, holo: false, rarity_symbol: "Diamond", condition: "NM", english: true, first_edition: false)
     @magikarp = @shadowless.cards.create!(name: "Magikarp", value: 3, holo: false, rarity_symbol: "Diamond", condition: "LP", english: true, first_edition: false)
+    visit "lots/#{@jungle.id}"
   end
  
 
   it 'displays all of a single lots attributes on a page' do
-    visit "lots/#{@jungle.id}"
 
     expect(page).to have_content(@jungle.id)
     expect(page).to have_content(@jungle.name)
@@ -24,21 +24,24 @@ RSpec.describe 'the lots show page' do
   end
 
   it 'counts the number of cards associated with the lot' do
-    visit "lots/#{@jungle.id}"
 
     expect(page).to have_content(@jungle.cards.count)
   end
 
-  xit 'has a link to the card index page' do
+  it 'has a link to the card index page' do
     click_on "All Cards"
 
     expect(current_path).to eq("/cards")
   end
 
-  xit 'has a link to the lot index page' do
+  it 'has a link to the lot index page' do
     click_on "All Lots"
 
     expect(current_path).to eq("/lots")
+  end
+
+  xit 'has a link to all cards in a lot' do
+
   end
 
 
