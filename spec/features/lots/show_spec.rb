@@ -40,8 +40,10 @@ RSpec.describe 'the lots show page' do
     expect(current_path).to eq("/lots")
   end
 
-  xit 'has a link to all cards in a lot' do
+  it 'has a link to each lots_cards index page' do
+    click_on @jungle.name
 
+    expect(current_path).to eq("lots/#{@jungle.id}/cards")
   end
 
 

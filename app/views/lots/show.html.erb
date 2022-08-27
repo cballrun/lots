@@ -7,6 +7,8 @@
 <%= @lot.updated_at %>
 <%= @lot.cards.count %>
 
+<%= link_to "All #{@lot.name} Cards", "/lots/#{@lot.id}/cards" %>
+
 <%# #@lots.most_recent.each_cwith_index do |lot, card|
 #make id = erb tag index %>
 <%# check out testing best practices in resources%>
