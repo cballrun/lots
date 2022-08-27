@@ -40,6 +40,8 @@ RSpec.describe 'Sets cards index' do
     expect(current_path).to eq("/lots")
   end
 
+  
+
 
 
 

@@ -29,6 +29,18 @@ RSpec.describe 'the lots show page' do
     expect(page).to have_content(@jungle.cards.count)
   end
 
+  xit 'has a link to the card index page' do
+    click_on "All Cards"
+
+    expect(current_path).to eq("/cards")
+  end
+
+  xit 'has a link to the lot index page' do
+    click_on "All Lots"
+
+    expect(current_path).to eq("/lots")
+  end
+
 
 
   
