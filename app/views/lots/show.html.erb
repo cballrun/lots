@@ -1,14 +1,14 @@
-<%= @lot.id %>
-<%= @lot.name %>
-<%= @lot.total_cards %>
-<%= @lot.original_150 %>
-<%= @lot.release_year %>
-<%= @lot.created_at %>
-<%= @lot.updated_at %>
-<%= @lot.cards.count %>
+<%= @this_lot.id %>
+<%= @this_lot.name %>
+<%= @this_lot.total_cards %>
+<%= @this_lot.original_150 %>
+<%= @this_lot.release_year %>
+<%= @this_lot.created_at %>
+<%= @this_lot.updated_at %>
+<%= @this_lot.cards.count %>
 
-<h3><%= link_to "All #{@lot.name} Cards", "/lots/#{@lot.id}/cards" %></h3>
+<h3><%= link_to "All #{@this_lot.name} Cards", "/lots/#{@this_lot.id}/cards" %></h3>
 
-<%# #@lots.most_recent.each_cwith_index do |lot, card|
+<%# #@lots.most_recent.each_cwith_index do |this_lot, card|
 #make id = erb tag index %>
 <%# check out testing best practices in resources%>

@@ -3,9 +3,9 @@ class LotsController < ApplicationController
     @lots = Lot.all
   end
 
-  # def show
-  #   @lot = Lot.find(params[:id])
-  # end
+  def show
+    @this_lot = Lot.find(params[:id])
+  end
   
   def new
 
