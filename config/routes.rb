@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   get 'lots/:id', to: 'lots#show'
   get '/cards', to: 'cards#index'
   get '/cards/:id', to: 'cards#show'
+  get '/lots/:id/edit', to: 'lots#edit'
+  patch 'lots/:id', to: 'lots#update'
+  get '/cards', to: 'cards#index'
   get '/lots/:lot_id/cards', to: 'lot_cards#index'
   
 end
