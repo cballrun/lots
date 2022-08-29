@@ -12,9 +12,14 @@ class LotsController < ApplicationController
   end
 
   def create
-    new_lot = Lot.create(name: params[:name], total_cards: params[:total_cards].to_i, original_150: params[:original_150], release_year: params[:release_year].to_i)
+    new_lot = Lot.create(lot_params)
     redirect_to "/lots"
   end
+  
+  def lot_params
+    params.permit(:name, :total_cards, :original_150, :release_year)
+  end
+
 
 
 end
