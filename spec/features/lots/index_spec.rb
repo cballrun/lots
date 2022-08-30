@@ -55,7 +55,7 @@ RSpec.describe 'the lots index page' do
     expect(current_path).to eq("/lots/#{@shadowless.id}/edit")
   end
 
-  it 'each Lot has a link for deletion that deletes that lot' do
+  it 'each Lot has a link for deletion that deletes that Lot' do
     expect(page).to have_content(@jungle.name)
     click_on "Delete #{@jungle.name}"
   

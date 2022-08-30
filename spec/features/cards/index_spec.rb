@@ -42,6 +42,15 @@ RSpec.describe 'the cards index page' do
     expect(current_path).to eq("/cards/#{@kangaskhan.id}/edit")
   end
 
+  it 'each Card has a link for deletion that deletes that Card' do
+    expect(page).to have_content(@charizard.name)
+    click_on "Delete #{@charizard.name}"
+  
+    expect(current_path).to eq('/cards')
+    expect(page).to_not have_content(@charizard.name)
+    expect(page).to have_content(@kangaskhan.name)
+  end
+
 
 
 end
