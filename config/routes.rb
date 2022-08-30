@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   patch 'lots/:id', to: 'lots#update'
   get '/cards', to: 'cards#index'
   get '/lots/:lot_id/cards', to: 'lot_cards#index'
-  
+  get "/lots/:lot_id/cards/new", to: 'lot_cards#new'
 end

@@ -15,7 +15,9 @@
 @dragonair = @shadowless.cards.create(name: "Dragonair", value: 150, holo: false, rarity_symbol: "Star", condition: "LP", english: true, first_edition: true)
 
 @jungle = Lot.create(name: "Jungle", total_cards: 64, original_150: true, release_year: 1999)
-@kangaskhan = @jungle.cards.create!(name: "Kangaskhan", value: 35, holo: true, rarity_symbol: "Star", condition: "LP", english: true, first_edition: true)
+@kangaskhan = @jungle.cards.create(name: "Kangaskhan", value: 35, holo: true, rarity_symbol: "Star", condition: "LP", english: true, first_edition: true)
+@lickitung = @jungle.cards.create(name: "Lickitung", value: 1, holo: false, rarity_symbol: "Diamond", condition: "LP", english: true, first_edition: false)
+
 
 @base = Lot.create!(name: "Base Set", total_cards: 102, original_150: true, release_year: 1999)
 

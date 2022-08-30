@@ -26,11 +26,12 @@ RSpec.describe 'Sets cards index' do
     expect(page).to have_content(@magikarp.created_at)
     expect(page).to have_content(@magikarp.updated_at)
     expect(page).to have_content(@pidgey.name)
+    expect(page).to_not have_content(@kangaskhan.name)
   end
 
-  it 'has a link to the card index page' do
+  it 'has a link to the card index page' do #maybe move to layout test
     click_on "All Cards"
-
+    
     expect(current_path).to eq("/cards")
   end
 

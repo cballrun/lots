@@ -5,7 +5,7 @@
 <%= @this_lot.release_year %>
 <%= @this_lot.created_at %>
 <%= @this_lot.updated_at %>
-<%= @this_lot.cards.count %>
+<%= @this_lot.cards.count %> 
 
 <h3><%= link_to "All #{@this_lot.name} Cards", "/lots/#{@this_lot.id}/cards" %></h3>
 <h3><%= link_to "Update Lot", "/lots/#{@this_lot.id}/edit" %></h3>
@@ -13,3 +13,4 @@
 <%# #@lots.most_recent.each_cwith_index do |this_lot, card|
 #make id = erb tag index %>
 <%# check out testing best practices in resources%>
+<%# #move this_lot.cards.count to model %>
