@@ -1,7 +1,12 @@
 class LotCardsController < ApplicationController
   def index
     @lot = Lot.find(params[:lot_id])
-    @cards = @lot.cards
+    if params[:sort] == "abc"
+      @cards = @lot.cards.abc_order
+    else
+      @cards = @lot.cards
+    end
+   
   end
   #@cards = @lot.cards.order(:name)
 
