@@ -33,6 +33,15 @@ RSpec.describe 'the cards index page' do
     expect(page).to_not have_content(@dragonair.name)
   end
 
+  it 'has a link for each card to edit that card' do
+    click_on "Edit #{@charizard.name}"
+    expect(current_path).to eq("/cards/#{@charizard.id}/edit")
+  
+    visit "/cards"
+    click_on "Edit #{@kangaskhan.name}"
+    expect(current_path).to eq("/cards/#{@kangaskhan.id}/edit")
+  end
+
 
 
 end
