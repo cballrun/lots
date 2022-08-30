@@ -8,4 +8,18 @@ class CardsController < ApplicationController
     @card = Card.find(params[:id])
   end
 
+  def edit
+    @card = Card.find(params[:id])
+  end
+
+  def update
+    card = Card.find(params[:id])
+    card.update(card_params)
+    redirect_to "/cards/#{card.id}"
+  end
+
+  def card_params
+    params.permit(:name, :value, :holo, :rarity_symbol, :condition, :english, :first_edition)
+  end
+
 end

@@ -14,3 +14,5 @@
   <p><%= card.created_at %></p>
   <p><%= card.updated_at %></p>
 <% end %>
+
+<h3><%= link_to "Create Card", "/lots/#{@lot.id}/cards/new" %></h3>

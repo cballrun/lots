@@ -1,0 +1,12 @@
+<%= form_with url: '/lots', method: :post, local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name%>
+  <%= form.label :total_cards %>
+  <%= form.text_field :total_cards%>
+  <%= form.label :original_150 %>
+  <%= form.text_field :original_150%>
+  <%= form.label :release_year %>
+  <%= form.text_field :release_year%>
+
+  <%= form.submit "Create Lot" %>
+<% end %>

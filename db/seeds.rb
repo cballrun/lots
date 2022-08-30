@@ -6,16 +6,18 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-@shadowless = Lot.create!(name: "Base Shadowless", total_cards: 102, original_150: true, release_year: 1999)
-@magikarp = @shadowless.cards.create!(name: "Magikarp", value: 3, holo: false, rarity_symbol: "Diamond", condition: "LP", english: true, first_edition: false)
-@pidgey = @shadowless.cards.create!(name: "Pidgey", value: 3, holo: false, rarity_symbol: "Circle", condition: "NM", english: true, first_edition: false)
+@shadowless = Lot.create(name: "Base Shadowless", total_cards: 102, original_150: true, release_year: 1999)
+@magikarp = @shadowless.cards.create(name: "Magikarp", value: 3, holo: false, rarity_symbol: "Diamond", condition: "LP", english: true, first_edition: false)
+@pidgey = @shadowless.cards.create(name: "Pidgey", value: 3, holo: false, rarity_symbol: "Circle", condition: "NM", english: true, first_edition: false)
 @charizard = @shadowless.cards.create(name: "Charizard", value: 500, holo: true, rarity_symbol: "Star", condition: "HP", english: true, first_edition: false)
 @kadabra = @shadowless.cards.create(name: "Kadabra", value: 35, holo: true, rarity_symbol: "Diamond", condition: "LP", english: true, first_edition: true)
 @blastoise = @shadowless.cards.create(name: "Blastoise", value: 260, holo: true, rarity_symbol: "Star", condition: "LP", english: true, first_edition: false)
 @dragonair = @shadowless.cards.create(name: "Dragonair", value: 150, holo: false, rarity_symbol: "Star", condition: "LP", english: true, first_edition: true)
 
-@jungle = Lot.create!(name: "Jungle", total_cards: 64, original_150: true, release_year: 1999)
-@kangaskhan = @jungle.cards.create!(name: "Kangaskhan", value: 35, holo: true, rarity_symbol: "Star", condition: "LP", english: true, first_edition: true)
+@jungle = Lot.create(name: "Jungle", total_cards: 64, original_150: true, release_year: 1999)
+@kangaskhan = @jungle.cards.create(name: "Kangaskhan", value: 35, holo: true, rarity_symbol: "Star", condition: "LP", english: true, first_edition: true)
+@lickitung = @jungle.cards.create(name: "Lickitung", value: 1, holo: false, rarity_symbol: "Diamond", condition: "LP", english: true, first_edition: false)
+
 
 @base = Lot.create!(name: "Base Set", total_cards: 102, original_150: true, release_year: 1999)
 
