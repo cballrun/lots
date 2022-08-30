@@ -50,8 +50,8 @@ RSpec.describe 'the lots show page' do
     click_on "Delete Lot"
 
     expect(current_path).to eq('/lots')
-    expect(page).to_not have_content("Jungle")
-    expect(page).to have_content("Base Set")
+    expect(page).to_not have_content(@jungle.name)
+    expect(page).to have_content(@shadowless.name)
   end
 
   

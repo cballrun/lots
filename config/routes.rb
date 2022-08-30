@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get '/cards/:id', to: 'cards#show'
   get '/cards/:id/edit', to: 'cards#edit'
   patch '/cards/:id', to: 'cards#update'
-
+  delete '/cards/:id', to: 'cards#destroy'
   
   get '/lots/:lot_id/cards', to: 'lot_cards#index'
   get "/lots/:lot_id/cards/new", to: 'lot_cards#new'
