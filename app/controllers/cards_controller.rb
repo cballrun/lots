@@ -1,7 +1,7 @@
 class CardsController < ApplicationController
   
   def index
-    @cards = Card.all
+    @cards = Card.where(holo: true)
   end
 
   def show
@@ -15,7 +15,7 @@ class CardsController < ApplicationController
   def update
     card = Card.find(params[:id])
     card.update(card_params)
-    redirect_to "/cards/#{card.id}"
+    redirect_to "/cards/#{@kangaskhan.id}"
   end
 
   def card_params

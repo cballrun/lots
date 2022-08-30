@@ -12,12 +12,6 @@ RSpec.describe 'the cards index page' do
     visit "/cards"
   end  
 
-  xit 'displays the names of all cards' do
-    
-    expect(page).to have_content(@magikarp.name)
-    expect(page).to have_content(@kangaskhan.name)
-  end
-
   it 'has a link to the card index page' do
     click_on "All Cards"
 
@@ -33,9 +27,10 @@ RSpec.describe 'the cards index page' do
   it 'only shows Cards if they are holo' do
     expect(page).to have_content(@charizard.name)
     expect(page).to have_content(@blastoise.name)
+    expect(page).to have_content(@kangaskhan.name)
 
     expect(page).to_not have_content(@magikarp.name)
-    expect(page).to_not have_content(@kangaskhan.name)
+    expect(page).to_not have_content(@dragonair.name)
   end
 
 
