@@ -4,6 +4,7 @@
   <div id="lot-<%= index %>" >
   <p> <%= lot.name %> </p>
   <p> <%= lot.created_at %> </p>
+  <p> <%= link_to "Edit #{lot.name}", "lots/#{lot.id}/edit", method: :get %>
 <% end %>
 
 <h3> <%= link_to 'New Lot', '/lots/new' %> </h3>

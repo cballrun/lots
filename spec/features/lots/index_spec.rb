@@ -46,6 +46,15 @@ RSpec.describe 'the lots index page' do
     expect(current_path).to eq("/lots")
   end
 
+  it 'has a link for each lot to edit that lot' do
+    click_on "Edit #{@jungle.name}"
+    expect(current_path).to eq("/lots/#{@jungle.id}/edit")
+  
+    visit "/lots"
+    click_on "Edit #{@shadowless.name}"
+    expect(current_path).to eq("/lots/#{@shadowless.id}/edit")
+  end
+
   
 
 
