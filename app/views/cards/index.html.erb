@@ -2,5 +2,6 @@
 
 <% @cards.each do |card| %>
   <p><%= card.name %></p>
-  <p> <%= link_to "Edit #{card.name}", "cards/#{card.id}/edit", method: :get %>
+  <p> <%= link_to "Edit #{card.name}", "cards/#{card.id}/edit", method: :get %> </p>
+  <p> <%= link_to "Delete #{card.name}", "cards/#{card.id}", method: :delete %> </p>
   <% end %>
