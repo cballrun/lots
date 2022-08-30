@@ -9,14 +9,15 @@ class LotCardsController < ApplicationController
     @lot = Lot.find(params[:lot_id])
   end
 
-  # def create
-  #   Card.create(card_params)
-  #   redirect_to("/lot/#{params[:lot_id]}/cards")
-  # end
+  def create
+    @lot = Lot.find(params[:lot_id])
+    @card = @lot.cards.create!(card_params)
+    redirect_to("/lots/#{@lot.id}/cards")
+  end
 
-  # def card_params
-  #   params.permit(:card, :attributes, :here)
-  # end
+  def card_params
+    params.permit(:name, :value, :holo, :rarity_symbol, :condition, :english, :first_edition)
+  end
 
   # use ||= instead of if statement in params
 

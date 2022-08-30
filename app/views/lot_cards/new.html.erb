@@ -1,0 +1,18 @@
+<%= form_with url: "/lots/#{@lot.id}/cards", method: :post, local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name%>
+  <%= form.label :value %>
+  <%= form.text_field :value %>
+  <%= form.label :holo %>
+  <%= form.text_field :holo %>
+  <%= form.label :rarity_symbol %>
+  <%= form.text_field :rarity_symbol %>
+  <%= form.label :condition %>
+  <%= form.text_field :condition %>
+  <%= form.label :english %>
+  <%= form.text_field :english %>
+  <%= form.label :first_edition %>
+  <%= form.text_field :first_edition %>
+
+  <%= form.submit "Create Card" %>
+<% end %>

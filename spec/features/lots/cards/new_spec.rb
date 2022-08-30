@@ -25,19 +25,15 @@ RSpec.describe 'the Lot Cards creation' do
     fill_in('English', with: true)
     fill_in('First edition', with: false)
     click_button('Create Card')
+
+    expect(current_path).to eq("/lots/#{@jungle.id}/cards")
     
-  
+    expect(page).to have_content('Lickitung')
+    expect(page).to have_content('Diamond')
+    expect(@jungle.cards.last[:holo]).to eq(false)
+    expect(@jungle.cards.last[:lot_id]).to eq(@jungle.id)
   end
 
-
-  # it 'can create a new lot' do
-  #   visit '/lots/new'
-
-  #   fill_in('Name', with: 'Fossil')
-  #   fill_in('Total cards', with: 62)
-  #   fill_in('Original 150', with: true)
-  #   fill_in('Release year', with: 1999)
-  #   click_button('Create Lot')
   #   new_lot_id = Lot.last.id
   #   expect(current_path).to eq("/lots")
   #   expect(page).to have_content('Fossil')
