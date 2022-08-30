@@ -27,6 +27,7 @@ RSpec.describe 'the Lot update' do
 
     expect(current_path).to eq("/lots/#{@jungle.id}")
     expect(page).to have_content('Fossil')
+    expect(page).to_not have_content('Jungle')
   end
 
 
