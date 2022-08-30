@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Sets cards index' do
+RSpec.describe 'Lots Cards index' do
   before :each do
     @shadowless = Lot.create!(name: "Base Shadowless", total_cards: 102, original_150: true, release_year: 1999)
     @jungle = Lot.create!(name: "Jungle", total_cards: 64, original_150: true, release_year: 1999)
@@ -39,6 +39,13 @@ RSpec.describe 'Sets cards index' do
     click_on "All Lots"
 
     expect(current_path).to eq("/lots")
+  end
+
+  it 'has a link to sort Cards in alphabetical order' do
+    click_link 'Sort Cards By Alphabetical Order'
+
+    expect(current_path).to eq("/lots/#{@shadowless.id}/cards")
+  
   end
 
 
