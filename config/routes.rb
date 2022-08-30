@@ -6,12 +6,13 @@ Rails.application.routes.draw do
   get 'lots/:id', to: 'lots#show'
   get '/lots/:id/edit', to: 'lots#edit'
   patch 'lots/:id', to: 'lots#update'
+  delete '/lots/:id', to: 'lots#destroy'
   
   get '/cards', to: 'cards#index'
   get '/cards/:id', to: 'cards#show'
   get '/cards/:id/edit', to: 'cards#edit'
   patch '/cards/:id', to: 'cards#update'
-
+  delete '/cards/:id', to: 'cards#destroy'
   
   get '/lots/:lot_id/cards', to: 'lot_cards#index'
   get "/lots/:lot_id/cards/new", to: 'lot_cards#new'

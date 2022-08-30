@@ -30,6 +30,14 @@ class LotsController < ApplicationController
     redirect_to "/lots/#{this_lot.id}"
   end
 
+  def destroy
+    cards = Card.where(lot_id: params[:id])
+    this_lot = Lot.find(params[:id])
+    cards.destroy_all
+    this_lot.destroy
+    redirect_to '/lots'
+  end
+
   
 
 

@@ -18,6 +18,11 @@ class CardsController < ApplicationController
     redirect_to "/cards/#{@kangaskhan.id}"
   end
 
+  def destroy
+    card = Card.find(params[:id]).destroy
+    redirect_to '/cards'
+  end
+
   def card_params
     params.permit(:name, :value, :holo, :rarity_symbol, :condition, :english, :first_edition)
   end

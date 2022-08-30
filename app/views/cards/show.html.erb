@@ -11,3 +11,4 @@
 <%= @card.updated_at %>
 
 <h3><%= link_to "Update Card", "/cards/#{@card.id}/edit" %></h3>
+<h3><%= link_to "Delete Card", "/cards/#{@card.id}", method: :delete  %></h3>

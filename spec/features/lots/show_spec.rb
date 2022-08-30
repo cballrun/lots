@@ -46,6 +46,16 @@ RSpec.describe 'the lots show page' do
     expect(current_path).to eq("/lots/#{@jungle.id}/cards")
   end
 
+  it 'is able to delete a Lot with children from the Lot show page' do
+    click_on "Delete Lot"
+
+    expect(current_path).to eq('/lots')
+    expect(page).to_not have_content(@jungle.name)
+    expect(page).to have_content(@shadowless.name)
+  end
+
+  
+
 
 
   
