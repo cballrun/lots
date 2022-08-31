@@ -2,7 +2,7 @@
 
 ## Lots and Cards
 
-This is a basic CRUD web app that one could use to document information about limited release lots of Pokemon trading cards/information about the specific cards in this lot that they have. All current information in the database seed file details real information about cards that I have.
+This is a basic CRUD web app that one could use to document information about limited release lots of Pokemon trading cards/information about the specific cards in this lot that they have.
 
 ## Schema
 
@@ -23,7 +23,7 @@ This is a basic CRUD web app that one could use to document information about li
 5. Run bundle install
 6. Run rails db:create
 7. Run rails db:migrate
-8. Optional: run rails db:seed to use my card information
+8. Optional: run rails db:seed to use sample lots and cards information
 9. Run rails s to connect the Puma server
 
 ## Testing
