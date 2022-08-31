@@ -6,7 +6,7 @@ This is a basic CRUD web app that one could use to document information about li
 
 ## Schema
 
-Database Schema: [Database Schema:](https://dbdesigner.page.link/VD4EpBfDAFAFxciL7)
+[Database Schema](https://dbdesigner.page.link/VD4EpBfDAFAFxciL7)
 
 ## Database Info
 
