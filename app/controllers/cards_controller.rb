@@ -15,7 +15,7 @@ class CardsController < ApplicationController
   def update
     card = Card.find(params[:id])
     card.update(card_params)
-    redirect_to "/cards/#{@kangaskhan.id}"
+    redirect_to "/cards/#{card.id}"
   end
 
   def destroy
