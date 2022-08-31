@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'the Lot update' do
+RSpec.describe 'the Card update' do
   before :each do
     @jungle = Lot.create!(name: "Jungle", total_cards: 64, original_150: true, release_year: 1999)
     @kangaskhan = @jungle.cards.create!(name: "Kangaskhan", value: 35, holo: true, rarity_symbol: "Star", condition: "LP", english: true, first_edition: true)
@@ -28,7 +28,9 @@ RSpec.describe 'the Lot update' do
 
     expect(current_path).to eq("/cards/#{@kangaskhan.id}")
     expect(page).to have_content('Lickitung')
+    expect(page).to have_content(1)
     expect(page).to_not have_content('Kangaskhan')
+    expect(page).to_not have_content(35)
   end
 
 

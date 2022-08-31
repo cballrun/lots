@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get '/cards', to: 'cards#index'
   get '/cards/:id', to: 'cards#show'
   get '/cards/:id/edit', to: 'cards#edit'
-  patch '/cards/:id', to: 'cards#update'
+  put '/cards/:id', to: 'cards#update'
   delete '/cards/:id', to: 'cards#destroy'
   
   get '/lots/:lot_id/cards', to: 'lot_cards#index'

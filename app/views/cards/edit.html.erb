@@ -1,18 +1,20 @@
-<%= form_with url: "/cards/#{@card.id}", method: :patch, local: true do |form| %>
-  <%= form.label :name %>
-  <%= form.text_field :name%>
-  <%= form.label :value %>
-  <%= form.text_field :value %>
-  <%= form.label :holo %>
-  <%= form.text_field :holo %>
-  <%= form.label :rarity_symbol %>
-  <%= form.text_field :rarity_symbol %>
-  <%= form.label :condition %>
-  <%= form.text_field :condition %>
-  <%= form.label :english %>
-  <%= form.text_field :english %>
-  <%= form.label :first_edition %>
-  <%= form.text_field :first_edition %>
+<h2> Update Card Information </h2>
+
+<%= form_with url: "/cards/#{@card.id}", method: :put, local: true do |form| %>
+  <p> <%= form.label :name %>
+  <%= form.text_field :name%> </p>
+  <p> <%= form.label :value %>
+  <%= form.number_field :value %> </p>
+  <p> Please enter true if card is holographic, else enter false <br> <%= form.label :holo %>
+  <%= form.text_field :holo %> </p>
+  <p> <%= form.label :rarity_symbol %>
+  <%= form.text_field :rarity_symbol %> </p>
+  <p> <%= form.label :condition %>
+  <%= form.text_field :condition %> </p>
+  <p> Please enter true if card is English, else enter false <br> <%= form.label :english %>
+  <%= form.text_field :english %> </p>
+  <p>  Please enter true if card is first edition, else enter false <br><%= form.label :first_edition %>
+  <%= form.text_field :first_edition %> </p>
 
   <%= form.submit "Update Card" %>
 <% end %>

@@ -37,10 +37,16 @@ RSpec.describe 'the lots show page' do
     expect(current_path).to eq("/lots")
   end
 
-  it 'has a link to each lots_cards index page' do
+  it 'has a link to the lots_cards index page' do
     click_on @jungle.name
 
     expect(current_path).to eq("/lots/#{@jungle.id}/cards")
+  end
+
+  it 'is has a link to update a Lot' do
+    click_on "Update Lot"
+
+    expect(current_path).to eq("/lots/#{@jungle.id}/edit")
   end
 
   it 'is able to delete a Lot with children' do

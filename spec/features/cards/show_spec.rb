@@ -35,6 +35,13 @@ RSpec.describe 'the cards show page' do
 
     expect(current_path).to eq("/lots")
   end
+  
+  it 'is has a link to update a Card' do
+    click_on "Update Card"
+
+    expect(current_path).to eq("/cards/#{@magikarp.id}/edit")
+  end
+
 
   it 'has a link that deletes a card' do
     click_on "Delete Card"
