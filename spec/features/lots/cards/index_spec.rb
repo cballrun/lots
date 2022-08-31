@@ -6,7 +6,7 @@ RSpec.describe 'Lots Cards index' do
     @jungle = Lot.create!(name: "Jungle", total_cards: 64, original_150: true, release_year: 1999)
     @magikarp = @shadowless.cards.create!(name: "Magikarp", value: 3, holo: false, rarity_symbol: "Diamond", condition: "LP", english: true, first_edition: false)
     @kangaskhan = @jungle.cards.create!(name: "Kangaskhan", value: 35, holo: true, rarity_symbol: "Star", condition: "LP", english: true, first_edition: true)
-    @pidgey = @shadowless.cards.create!(name: "Pidgey", value: 3, holo: false, rarity_symbol: "Circle", condition: "NM", english: true, first_edition: false)
+    @pidgey = @shadowless.cards.create!(name: "Pidgey", value: 4, holo: false, rarity_symbol: "Circle", condition: "NM", english: true, first_edition: false)
     visit "lots/#{@shadowless.id}/cards"
   end
 
@@ -46,6 +46,17 @@ RSpec.describe 'Lots Cards index' do
 
     expect(current_path).to eq("/lots/#{@shadowless.id}/cards")
   
+  end
+
+  it 'only displays Cards with a value over a user given amount' do
+
+    fill_in('value', with: 3)
+
+    click_on('Filter By Value')
+
+    expect(current_path).to eq("/lots/#{@shadowless.id}/cards")
+    expect(page).to have_content(@pidgey.name)
+    expect(page).to_not have_content(@magikarp.name)
   end
 
 

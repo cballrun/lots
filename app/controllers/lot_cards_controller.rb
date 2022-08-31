@@ -3,12 +3,12 @@ class LotCardsController < ApplicationController
     @lot = Lot.find(params[:lot_id])
     if params[:sort] == "abc"
       @cards = @lot.cards.abc_order
+    elsif params[:given_value]
+      @cards = @lot.cards.value_cutoff(params[:given_value])
     else
       @cards = @lot.cards
     end
-   
   end
-  #@cards = @lot.cards.order(:name)
 
   def new
     @lot = Lot.find(params[:lot_id])
@@ -24,6 +24,6 @@ class LotCardsController < ApplicationController
     params.permit(:name, :value, :holo, :rarity_symbol, :condition, :english, :first_edition)
   end
 
-  # use ||= instead of if statement in params
+  # maybe use ||= instead of if statement in params
 
 end
