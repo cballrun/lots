@@ -32,13 +32,4 @@ RSpec.describe 'the Card update' do
     expect(page).to_not have_content('Kangaskhan')
     expect(page).to_not have_content(35)
   end
-
-
-
-
-
-
-
-
-
 end

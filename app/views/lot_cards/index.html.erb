@@ -1,26 +1,25 @@
 
 
-
 <% @cards.each do |card| %>
-  <p><%= card.name %></p>
-  <p><%= card.id %></p>
-  <p><%= card.lot_id %></p>
-  <p><%= card.value %></p>
-  <p><%= card.holo %></p>
-  <p><%= card.rarity_symbol %></p>
-  <p><%= card.condition %></p>
-  <p><%= card.english %></p>
-  <p><%= card.first_edition %></p>
-  <p><%= card.created_at %></p>
-  <p><%= card.updated_at %></p>
+  <h2>Name: <%= card.name %></h2>
+  <p> Card ID: <%= card.id %></p>
+  <p> Card Lot ID:<%= card.lot_id %></p>
+  <p> Card Value: <%= card.value %></p>
+  <p> Is Holo? <%= card.holo %></p>
+  <p> Rarity: <%= card.rarity_symbol %></p>
+  <p> Condition: <%= card.condition %></p>
+  <p> Is English?<%= card.english %></p>
+  <p> Is First Edition? <%= card.first_edition %></p>
+  <p> Card Created At: <%= card.created_at %></p>
+  <p> Card Updated At: <%= card.updated_at %></p>
 <% end %>
 
 <%= form_with url: "/lots/#{@lot.id}/cards", method: :get, local: true do |form| %>
-    <%= form.label :given_value %>
-    <%= form.text_field :given_value %>
-    <%= form.submit "Filter By Value", type: "submit" %>
+    <p> <%= form.label :given_value %>
+    <%= form.text_field :given_value %> </p>
+    
+    <%= form.submit "Cards Worth More Than Given Value", type: "submit" %>
 <% end %>
-
 
 <h3><%= link_to "Create Card", "/lots/#{@lot.id}/cards/new" %></h3>
 

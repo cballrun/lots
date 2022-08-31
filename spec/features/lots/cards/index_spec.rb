@@ -10,10 +10,7 @@ RSpec.describe 'Lots Cards index' do
     visit "lots/#{@shadowless.id}/cards"
   end
 
-
   it 'shows all of the names of the cards for the set' do
-    
-    
     expect(page).to have_content(@magikarp.id)
     expect(page).to have_content(@magikarp.lot_id)
     expect(page).to have_content(@magikarp.name)
@@ -45,27 +42,15 @@ RSpec.describe 'Lots Cards index' do
     click_link 'Sort Cards By Alphabetical Order'
 
     expect(current_path).to eq("/lots/#{@shadowless.id}/cards")
-  
   end
 
-  it 'only displays Cards with a value over a user given amount' do
-
+  it 'only displays Cards with a value over a user given value' do
     fill_in('value', with: 3)
 
-    click_on('Filter By Value')
+    click_on("Cards Worth More Than Given Value")
 
     expect(current_path).to eq("/lots/#{@shadowless.id}/cards")
     expect(page).to have_content(@pidgey.name)
     expect(page).to_not have_content(@magikarp.name)
   end
-
-
-
-  
-
-
-
-
-
-
 end
