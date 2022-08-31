@@ -1,5 +1,6 @@
-<%= form_with url: "/lots/#{@this_lot.id}", method: :patch, local: true do |form| %>
+<h2> Update Lot Information </h2>
 
+<%= form_with url: "/lots/#{@this_lot.id}", method: :put, local: true do |form| %>
   <p><%= form.label :name %>
   <%= form.text_field :name%></p>
   <p><%= form.label :total_cards %>
