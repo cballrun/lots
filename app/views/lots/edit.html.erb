@@ -1,4 +1,4 @@
-<h2> Update Lot Information </h2>
+<h2> Update <%= @this_lot.name %> Lot Information </h2>
 
 <%= form_with url: "/lots/#{@this_lot.id}", method: :put, local: true do |form| %>
   <p><%= form.label :name %>

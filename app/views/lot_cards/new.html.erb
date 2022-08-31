@@ -1,4 +1,4 @@
-<h2> Create New Card </h2>
+<h2> Create New <%= @lot.name %> Card </h2>
 
 <%= form_with url: "/lots/#{@lot.id}/cards", method: :post, local: true do |form| %>
   <p> <%= form.label :name %>

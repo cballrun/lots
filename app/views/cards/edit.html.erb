@@ -1,4 +1,4 @@
-<h2> Update Card Information </h2>
+<h2> Update <%= @card.name %> Card Information </h2>
 
 <%= form_with url: "/cards/#{@card.id}", method: :put, local: true do |form| %>
   <p> <%= form.label :name %>
