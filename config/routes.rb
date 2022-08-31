@@ -17,5 +17,4 @@ Rails.application.routes.draw do
   get '/lots/:lot_id/cards', to: 'lot_cards#index'
   get "/lots/:lot_id/cards/new", to: 'lot_cards#new'
   post '/lots/:lot_id/cards', to: 'lot_cards#create'
-  
 end

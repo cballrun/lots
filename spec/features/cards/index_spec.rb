@@ -50,7 +50,4 @@ RSpec.describe 'the cards index page' do
     expect(page).to_not have_content(@charizard.name)
     expect(page).to have_content(@kangaskhan.name)
   end
-
-
-
 end

@@ -30,5 +30,4 @@ RSpec.describe 'the Lot update' do
     expect(page).to have_content(62)
     expect(page).to_not have_content(64)
   end
-
 end

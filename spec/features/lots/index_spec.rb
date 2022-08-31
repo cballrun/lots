@@ -59,11 +59,4 @@ RSpec.describe 'the lots index page' do
     expect(page).to_not have_content(@jungle.name)
     expect(page).to have_content(@shadowless.name)
   end
-
-  
-
-
-
-
-
 end

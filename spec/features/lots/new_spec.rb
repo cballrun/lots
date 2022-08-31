@@ -20,7 +20,5 @@ RSpec.describe 'the Lot creation' do
     expect(current_path).to eq("/lots")
     expect(page).to have_content('Fossil')
   end
-
-
 end
 
