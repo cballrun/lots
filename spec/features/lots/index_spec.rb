@@ -13,6 +13,7 @@ RSpec.describe 'the lots index page' do
   it 'displays the names of all lots' do
     expect(page).to have_content(@jungle.name)
     expect(page).to have_content(@shadowless.name)
+    expect(page).to have_content(@base.name)
   end
 
   it 'displays lots with most recently created first' do
@@ -20,7 +21,7 @@ RSpec.describe 'the lots index page' do
       expect(page).to have_content(@shadowless.name)
       expect(page).to have_content(@shadowless.created_at)
       expect(page).to_not have_content(@jungle.name)
-     end
+    end
   end
 
   it 'shows when a lot was created' do
