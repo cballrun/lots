@@ -11,8 +11,6 @@ RSpec.describe 'the lots index page' do
   #eventually another describe block here?
 
   it 'displays the names of all lots' do
-    
-    
     expect(page).to have_content(@jungle.name)
     expect(page).to have_content(@shadowless.name)
   end
