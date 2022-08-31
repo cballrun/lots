@@ -1,14 +1,14 @@
-<%= @card.id %>
-<%= @card.lot_id %>
-<%= @card.name %>
-<%= @card.value %>
-<%= @card.holo %>
-<%= @card.rarity_symbol %>
-<%= @card.condition %>
-<%= @card.english %>
-<%= @card.first_edition %>
-<%= @card.created_at %>
-<%= @card.updated_at %>
+<h2> <%= @card.name %> Card Info </h2>
 
-<h3><%= link_to "Update Card", "/cards/#{@card.id}/edit" %></h3>
-<h3><%= link_to "Delete Card", "/cards/#{@card.id}", method: :delete  %></h3>
+<p> Card ID: <%= @card.id %> </p>
+<p> Lot ID: <%= @card.lot_id %> </p>
+<p> Card Value: <%= @card.value %> </p>
+<p> Is Holographic? <%= @card.holo %> </p>
+<p> Rarity: <%= @card.rarity_symbol %> </p>
+<p> Condition: <%= @card.condition %> </p>
+<p> Is English? <%= @card.english %> </p>
+<p> Is First Edition? <%= @card.first_edition %> </p>
+<p> Card Created At: <%= @card.created_at %> </p>
+<p> Card Updated At: <%= @card.updated_at %> </p>
+
+<h3><%= link_to "Update Card", "/cards/#{@card.id}/edit" %> <%= link_to "Delete Card", "/cards/#{@card.id}", method: :delete  %></h3>

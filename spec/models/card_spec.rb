@@ -13,12 +13,15 @@ RSpec.describe Card do
   it 'sorts cards by alphabetical order' do
     cards_abc_order = Card.abc_order
     
-    expect(cards_abc_order).to eq([@kangaskhan, @magikarp, @pidgey])
+    expect(Card.abc_order).to eq([@kangaskhan, @magikarp, @pidgey])
   end
 
   it 'returns Cards with values over a given value' do
     expect(Card.value_cutoff(3)).to eq([@kangaskhan, @pidgey])
   end
 
-
+  it 'counts the number of cards in a lot' do
+    expect(@jungle.cards.count_cards).to eq(0)
+    expect(@shadowless.cards.count_cards).to eq(3)
+  end
 end

@@ -10,7 +10,6 @@ RSpec.describe 'the cards show page' do
   end
 
   it 'displays all of a single cards attributes on a page' do
-    
     expect(page).to have_content(@magikarp.id)
     expect(page).to have_content(@magikarp.lot_id)
     expect(page).to have_content(@magikarp.name)
@@ -36,16 +35,19 @@ RSpec.describe 'the cards show page' do
 
     expect(current_path).to eq("/lots")
   end
+  
+  it 'is has a link to update a Card' do
+    click_on "Update Card"
 
-  it 'is able to delete a Lot with children from the Lot show page' do
+    expect(current_path).to eq("/cards/#{@magikarp.id}/edit")
+  end
+
+
+  it 'has a link that deletes a card' do
     click_on "Delete Card"
 
     expect(current_path).to eq('/cards')
     expect(page).to_not have_content(@magikarp.name)
     expect(page).to have_content(@kangaskhan.name)
   end
-
-
-
-
 end

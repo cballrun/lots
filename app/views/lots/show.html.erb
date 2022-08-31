@@ -1,17 +1,12 @@
-<%= @this_lot.id %>
-<%= @this_lot.name %>
-<%= @this_lot.total_cards %>
-<%= @this_lot.original_150 %>
-<%= @this_lot.release_year %>
-<%= @this_lot.created_at %>
-<%= @this_lot.updated_at %>
-<%= @this_lot.cards.count %> 
+<h2> <%= @this_lot.name %> Lot Info </h2>
+
+<p> Lot ID: <%= @this_lot.id %> </p>
+<p> Total Cards in Lot: <%= @this_lot.total_cards %> </p>
+<p> Generation 1? <%= @this_lot.original_150 %> </p>
+<p> Lot Release Year: <%= @this_lot.release_year %> </p>
+<p> Lot Made: <%= @this_lot.created_at %> </p>
+<p> Lot Updated: <%= @this_lot.updated_at %> </p>
+<p> Cards Obtained in Lot: <%= @this_lot.cards.count_cards %> </p>
 
 <h3><%= link_to "All #{@this_lot.name} Cards", "/lots/#{@this_lot.id}/cards" %></h3>
-<h3><%= link_to "Update Lot", "/lots/#{@this_lot.id}/edit" %></h3>
-<h3><%= link_to "Delete Lot", "/lots/#{@this_lot.id}", method: :delete  %></h3>
-
-<%# #@lots.most_recent.each_cwith_index do |this_lot, card|
-#make id = erb tag index %>
-<%# check out testing best practices in resources%>
-<%# #move this_lot.cards.count to model %>
+<h3><%= link_to "Update Lot", "/lots/#{@this_lot.id}/edit" %>    <%= link_to "Delete Lot", "/lots/#{@this_lot.id}", method: :delete %> </h3>

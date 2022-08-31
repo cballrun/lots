@@ -1,7 +1,6 @@
-<h1>Cards</h1>
+<h1>All Cards</h1>
 
 <% @cards.each do |card| %>
-  <p><%= card.name %></p>
-  <p> <%= link_to "Edit #{card.name}", "cards/#{card.id}/edit", method: :get %> </p>
-  <p> <%= link_to "Delete #{card.name}", "cards/#{card.id}", method: :delete %> </p>
+  <h2><%= card.name %></h2>
+  <h3> <%= link_to "Edit #{card.name}", "cards/#{card.id}/edit", method: :get %>    <%= link_to "Delete #{card.name}", "cards/#{card.id}", method: :delete %> </h3>
   <% end %>

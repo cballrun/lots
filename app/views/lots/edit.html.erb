@@ -1,13 +1,14 @@
-<%= form_with url: "/lots/#{@this_lot.id}", method: :patch, local: true do |form| %>
+<h2> Update <%= @this_lot.name %> Lot Information </h2>
 
-  <%= form.label :name %>
-  <%= form.text_field :name%>
-  <%= form.label :total_cards %>
-  <%= form.text_field :total_cards%>
-  <%= form.label :original_150 %>
-  <%= form.text_field :original_150%>
-  <%= form.label :release_year %>
-  <%= form.text_field :release_year%>
+<%= form_with url: "/lots/#{@this_lot.id}", method: :put, local: true do |form| %>
+  <p><%= form.label :name %>
+  <%= form.text_field :name%></p>
+  <p><%= form.label :total_cards %>
+  <%= form.number_field :total_cards%></p>
+  <p>Please enter true if Generation 1 Lot, else enter false <br> <%= form.label :original_150 %>
+  <%= form.text_field :original_150%></p>
+  <p><%= form.label :release_year %>
+  <%= form.number_field :release_year%></p>
 
   <%= form.submit "Update Lot" %>
 <% end %>

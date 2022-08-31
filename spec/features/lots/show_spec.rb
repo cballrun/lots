@@ -10,9 +10,7 @@ RSpec.describe 'the lots show page' do
     visit "lots/#{@jungle.id}"
   end
  
-
   it 'displays all of a single lots attributes on a page' do
-
     expect(page).to have_content(@jungle.id)
     expect(page).to have_content(@jungle.name)
     expect(page).to have_content(@jungle.total_cards)
@@ -23,8 +21,7 @@ RSpec.describe 'the lots show page' do
     expect(page).to_not have_content(@shadowless.name)
   end
 
-  it 'counts the number of cards associated with the lot' do
-
+  it 'displays a count of the number of cards in a lot' do
     expect(page).to have_content(@jungle.cards.count)
   end
 
@@ -40,25 +37,23 @@ RSpec.describe 'the lots show page' do
     expect(current_path).to eq("/lots")
   end
 
-  it 'has a link to each lots_cards index page' do
+  it 'has a link to the lots_cards index page' do
     click_on @jungle.name
 
     expect(current_path).to eq("/lots/#{@jungle.id}/cards")
   end
 
-  it 'is able to delete a Lot with children from the Lot show page' do
+  it 'is has a link to update a Lot' do
+    click_on "Update Lot"
+
+    expect(current_path).to eq("/lots/#{@jungle.id}/edit")
+  end
+
+  it 'is able to delete a Lot with children' do
     click_on "Delete Lot"
 
     expect(current_path).to eq('/lots')
     expect(page).to_not have_content(@jungle.name)
     expect(page).to have_content(@shadowless.name)
   end
-
-  
-
-
-
-  
-
-
 end

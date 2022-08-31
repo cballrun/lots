@@ -9,9 +9,6 @@ RSpec.describe Lot do
   end
 
   it 'can order by most recently made' do
-    expect(Lot.most_recent).to eq([@jungle, @base, @shadowless])
+    expect(Lot.most_recent).to eq([@shadowless, @base, @jungle])
   end
-
-
-
 end

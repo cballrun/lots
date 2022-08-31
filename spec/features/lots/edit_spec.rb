@@ -13,7 +13,7 @@ RSpec.describe 'the Lot update' do
     expect(current_path).to eq("/lots/#{@jungle.id}/edit")
   end
 
-  it 'can edit the Lot' do
+  it 'can fully edit the Lot' do
     visit '/lots'
     
     expect(page).to have_content('Jungle')
@@ -27,24 +27,7 @@ RSpec.describe 'the Lot update' do
 
     expect(current_path).to eq("/lots/#{@jungle.id}")
     expect(page).to have_content('Fossil')
-    expect(page).to_not have_content('Jungle')
+    expect(page).to have_content(62)
+    expect(page).to_not have_content(64)
   end
-
-
-  
-  # User Story 12, Parent Update 
-
-  # As a visitor
-  # When I visit a parent show page
-  # Then I see a link to update the parent "Update Parent"
-  # When I click the link "Update Parent"
-  # Then I am taken to '/parents/:id/edit' where I  see a form to edit the parent's attributes:
-  # When I fill out the form with updated information
-  # And I click the button to submit the form
-  # Then a `PATCH` request is sent to '/parents/:id',
-  # the parent's info is updated,
-  # and I am redirected to the Parent's Show page where I see the parent's updated info
-
-
-
 end

@@ -37,9 +37,4 @@ class LotsController < ApplicationController
     this_lot.destroy
     redirect_to '/lots'
   end
-
-  
-
-
-
 end
