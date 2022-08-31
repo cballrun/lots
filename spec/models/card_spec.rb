@@ -20,5 +20,10 @@ RSpec.describe Card do
     expect(Card.value_cutoff(3)).to eq([@kangaskhan, @pidgey])
   end
 
+  it 'counts the number of cards in a lot' do
+    expect(@jungle.cards.count_cards).to eq(0)
+    expect(@shadowless.cards.count_cards).to eq(3)
+  end
+
 
 end

@@ -9,4 +9,8 @@ class Card < ApplicationRecord
     self.where("value > #{given_value}")
   end
 
+  def self.count_cards
+    self.count
+  end
+
 end
